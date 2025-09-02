@@ -9,14 +9,30 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 10px;
+    position: relative;
 }
 
-.logo {
-    text-align: center;
-    font-size: 26px;
+/* Floating logo */
+.floating-logo {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
     font-weight: bold;
     color: white;
-    margin-bottom: 15px;
+    z-index: 100;
+}
+
+/* Background logo */
+.background-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 200px;
+    color: rgba(255,255,255,0.05);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 /* --- Chat Container --- */
@@ -32,6 +48,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     border: 2px solid #fff3;
+    z-index: 10;
 }
 
 /* --- Messages Area --- */
@@ -123,6 +140,7 @@ body {
 @media (max-width: 600px) {
     .chat-box { height: 70vh; }
     .input-area input, .input-area button { font-size: 14px; padding: 8px 10px; }
-    .logo { font-size: 22px; margin-bottom: 10px; }
+    .floating-logo { font-size: 22px; }
     .message { font-size: 14px; max-width: 85%; }
+    .background-logo { font-size: 120px; }
 }
