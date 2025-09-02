@@ -17,7 +17,7 @@ def rava_greeting(user_input):
         return "Hey there 👋 I'm Rava!"
     elif "how are you" in user_input:
         return "I'm running smoothly 😄 How about you?"
-    goodbye= ["bye", "see you later", "Goodnight", "good night", "Sweet Dreams"]
+    goodbye= ["bye", "see you later", "Goodnight", "good night", "Sweet Dreams","Joshua"]
     if any(word in user_input for word in goodbye):
         return "Goodbye 👋 Bright trails ✨"
     return None
