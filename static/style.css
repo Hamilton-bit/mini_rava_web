@@ -3,25 +3,27 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1f1c2c, #928dab);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    min-height: 100vh;
     margin: 0;
+    padding: 10px;
 }
 
 .logo {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  padding: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
 }
 
 /* --- Chat Container --- */
 .chat-box {
-    width: 420px;
-    max-width: 95%;
-    height: 520px;
+    width: 100%;
+    max-width: 450px;
+    height: 75vh;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     border-radius: 25px;
@@ -40,13 +42,14 @@ body {
     flex-direction: column;
     overflow-y: auto;
     gap: 10px;
+    scroll-behavior: smooth;
 }
 
 /* --- Chat Bubbles --- */
 .message {
     padding: 12px 18px;
     border-radius: 20px;
-    max-width: 75%;
+    max-width: 80%;
     word-wrap: break-word;
     font-size: 15px;
     line-height: 1.4;
@@ -118,6 +121,8 @@ body {
 
 /* --- Responsive --- */
 @media (max-width: 600px) {
-    .chat-box { height: 420px; }
-    .input-area input, .input-area button { font-size: 14px; padding: 10px; }
+    .chat-box { height: 70vh; }
+    .input-area input, .input-area button { font-size: 14px; padding: 8px 10px; }
+    .logo { font-size: 22px; margin-bottom: 10px; }
+    .message { font-size: 14px; max-width: 85%; }
 }
