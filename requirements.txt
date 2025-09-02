@@ -1,0 +1,8 @@
+Flask
+pandas
+openpyxl
+xlrd
+pyodbc
+wikipedia
+serpapi
+python-dotenv
