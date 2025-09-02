@@ -109,12 +109,17 @@ def is_online(host="8.8.8.8", port=53, timeout=3):
         return False
 
 def rava_play_song(user_input):
-    keywords = ["play", "play song", "start song"]
-    for keyword in keywords:
-        if keyword in user_input.lower():
-            song = user_input.lower().replace(keyword, "").strip()
-            if not song:
-                return "Which song do you want me to play?"
+    # Make sure input starts with "play"
+    if user_input.lower().startswith("play"):
+        # Extract everything after "play"
+        song = user_input[4:].strip()  # takes all text after the first 4 chars ("play")
+        if song:
+            # Open YouTube search for the song
+            query = "+".join(song.split())  # replaces spaces with '+' for YouTube URL
+            webbrowser.open(f"https://www.youtube.com/results?search_query={query}")
+            return f"Playing '{song}' on YouTube 🎵"
+        else:
+            return "Please tell me the name of the song to play."
 
             if is_online():
                 # Online → open YouTube
